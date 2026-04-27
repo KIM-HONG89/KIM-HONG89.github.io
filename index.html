@@ -1,19 +1,173 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>나의 AI 강사 프로필</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 강사 김홍 - 시니어를 위한 디지털 안내서</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #D4A574;
+            --primary-dark: #B38659;
+            --secondary: #F5E6D3;
+            --text-dark: #3D2817;
+            --bg-light: #FFFBF7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            word-break: keep-all;
+        }
+
+        h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* 헤더 */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--secondary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .logo-circle { width: 35px; height: 35px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+
+        /* 히어로 섹션 */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%);
+            overflow: hidden;
+        }
+        .hero-flex { display: flex; align-items: center; justify-content: space-between; gap: 50px; flex-wrap: wrap; }
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero h1 { font-size: 3rem; line-height: 1.3; margin-bottom: 25px; }
+        .hero p { font-size: 1.25rem; color: #6B5B4F; margin-bottom: 35px; }
+
+        /* 이미지 스타일링 */
+        .hero-image-container {
+            flex: 0 1 400px;
+            position: relative;
+        }
+        .hero-image-wrapper {
+            width: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+            border: 8px solid white;
+            background: white;
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 섹션 공통 */
+        section { padding: 100px 0; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.2rem; position: relative; display: inline-block; padding-bottom: 15px; }
+        .section-title h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: var(--primary); border-radius: 2px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .card h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.5rem; }
+
+        /* 버튼 및 링크 */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: var(--primary-dark); }
+        
+        .email-link { color: var(--primary); text-decoration: underline; font-weight: 500; }
+
+        /* 푸터 */
+        footer { background: var(--text-dark); color: white; padding: 60px 0; text-align: center; }
+        .footer-logo { font-family: 'Noto Serif KR', serif; font-size: 1.5rem; margin-bottom: 20px; display: block; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-flex { text-align: center; justify-content: center; }
+        }
+    </style>
 </head>
 <body>
-<h1>안녕하세요! AI 강사 [김 홍]입니다.</h1>
-<p>시니어 여러분의 디지털 생활을 돕는 친절한 안내자입니다.</p>
-<h2>주요 경력</h2>
-<ul>
-<li>2026년~ 서울시 노인역량활용사업 AI 강사</li>
-<li>[리얼슈프림(부동산 경매업체) 대표]</li>
-</ul>
-<h2>연락처</h2>
-<p>이메일: [hkimdongsuh@naver.com]</p>
+
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <div class="logo-circle">김</div>
+                AI 강사 김홍
+            </div>
+            <nav style="font-weight: 500; color: var(--primary-dark);">디지털 생활 안내자</nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-flex">
+            <div class="hero-text">
+                <h1>"어려운 기술을<br>쉬운 말로 친절하게<br>안내해 드립니다."</h1>
+                <p>시니어의 풍요로운 디지털 삶을 돕는<br>준비된 강사 김홍입니다.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="mailto:hkimdongsuh@naver.com" class="btn">강의 문의 메일 보내기</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-image-wrapper">
+                    <img src="1000004144.jpg" alt="AI 강사 김홍 프로필 사진">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background-color: white; text-align: center;">
+        <div class="container">
+            <div class="section-title">
+                <h2>문의하기</h2>
+            </div>
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">강의 요청 및 궁금하신 점은 아래 이메일로 보내주세요.</p>
+                <a href="mailto:hkimdongsuh@naver.com" class="email-link" style="font-size: 1.5rem;">hkimdongsuh@naver.com</a>
+                <p style="margin-top: 20px; color: #6B5B4F;">평일 기준 24시간 이내에 답변해 드립니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <span class="footer-logo">AI 강사 김홍</span>
+            <p style="margin-bottom: 20px;">시니어 디지털 문해력 향상 및 AI 대중화를 위해 활동합니다.</p>
+            <div style="opacity: 0.8;">
+                <p>이메일 문의: <a href="mailto:hkimdongsuh@naver.com" style="color: white;">hkimdongsuh@naver.com</a></p>
+                <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.5;">© 2026 AI 강사 김홍. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
-</html
+</html>
